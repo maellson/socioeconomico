@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/BAIRROS_0.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:12
+        }).fitBounds([[-7.2974421899,-36.0065674895],[-7.17138800716,-35.7885960256]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        L.control.locate().addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop_BAIRROS_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Socio Econômico</th>\
+                        <td>' + (feature.properties['SocioEcono'] !== null ? Autolinker.link(String(feature.properties['SocioEcono'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BAIRROS_0_0(feature) {
+            switch(String(feature.properties['Name'])) {
+                case 'ACÁCIO FIGUEIREDO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,117,70,0.75)',
+            }
+                    break;
+                case 'ALTO BRANCO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(204,21,204,0.75)',
+            }
+                    break;
+                case 'ARAXÁ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(123,233,142,0.75)',
+            }
+                    break;
+                case 'BELA VISTA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(157,44,217,0.75)',
+            }
+                    break;
+                case 'BODOCONGÓ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(47,200,167,0.75)',
+            }
+                    break;
+                case 'CASTELO BRANCO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(222,109,169,0.75)',
+            }
+                    break;
+                case 'CATOLÉ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(104,47,236,0.75)',
+            }
+                    break;
+                case 'CENTENÁRIO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(155,212,49,0.75)',
+            }
+                    break;
+                case 'CENTRO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,87,231,0.75)',
+            }
+                    break;
+                case 'CIDADES':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(60,225,227,0.75)',
+            }
+                    break;
+                case 'CONCEIÇÃO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(234,15,77,0.75)',
+            }
+                    break;
+                case 'CRUZEIRO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(55,43,228,0.75)',
+            }
+                    break;
+                case 'CUITÉS':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(200,126,40,0.75)',
+            }
+                    break;
+                case 'DINAMÉRICA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(230,230,123,0.75)',
+            }
+                    break;
+                case 'DISTRITO INDUSTRIAL':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(205,57,119,0.75)',
+            }
+                    break;
+                case 'ESTAÇÃO VELHA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(211,78,100,0.75)',
+            }
+                    break;
+                case 'ITARARÉ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(31,218,156,0.75)',
+            }
+                    break;
+                case 'JARDIM CONTINENTAL':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(124,107,201,0.75)',
+            }
+                    break;
+                case 'JARDIM PAULISTANO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(203,104,233,0.75)',
+            }
+                    break;
+                case 'JARDIM QUARENTA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(81,227,88,0.75)',
+            }
+                    break;
+                case 'JARDIM TAVARES':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,75,177,0.75)',
+            }
+                    break;
+                case 'JEREMIAS':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,26,213,0.75)',
+            }
+                    break;
+                case 'JOSÉ PINHEIRO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(208,22,165,0.75)',
+            }
+                    break;
+                case 'LAURITZEN':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(141,221,49,0.75)',
+            }
+                    break;
+                case 'LIBERDADE':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(214,203,120,0.75)',
+            }
+                    break;
+                case 'LOUZEIRO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(58,109,236,0.75)',
+            }
+                    break;
+                case 'MALVINAS':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(166,103,221,0.75)',
+            }
+                    break;
+                case 'MIRANTE':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(49,181,201,0.75)',
+            }
+                    break;
+                case 'MONTE CASTELO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(77,156,202,0.75)',
+            }
+                    break;
+                case 'MONTE SANTO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(77,156,202,0.75)',
+            }
+                    break;
+                case 'NAÇÕES':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(34,43,214,0.75)',
+            }
+                    break;
+                case 'NOVA BRASÍLIA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(214,167,80,0.75)',
+            }
+                    break;
+                case 'NOVO BODOCONGÓ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(24,205,75,0.75)',
+            }
+                    break;
+                case 'PALMEIRA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,221,91,0.75)',
+            }
+                    break;
+                case 'PEDREGAL':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(101,14,223,0.75)',
+            }
+                    break;
+                case 'PRATA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(79,219,68,0.75)',
+            }
+                    break;
+                case 'PRESIDENTE MÉDICE':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(221,195,108,0.75)',
+            }
+                    break;
+                case 'QUARENTA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(177,210,67,0.75)',
+            }
+                    break;
+                case 'RAMADINHA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(14,123,225,0.75)',
+            }
+                    break;
+                case 'SANDRA CAVALCANTE':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(36,102,201,0.75)',
+            }
+                    break;
+                case 'SANTA CRUZ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(20,220,200,0.75)',
+            }
+                    break;
+                case 'SANTA ROSA':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(217,83,53,0.75)',
+            }
+                    break;
+                case 'SANTO ANTÔNIO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(138,210,122,0.75)',
+            }
+                    break;
+                case 'SÃO JOSÉ':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,213,161,0.75)',
+            }
+                    break;
+                case 'SERROTÃO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(82,218,152,0.75)',
+            }
+                    break;
+                case 'TAMBOR':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(29,58,206,0.75)',
+            }
+                    break;
+                case 'TRêS IRMÃS':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(204,220,83,0.75)',
+            }
+                    break;
+                case 'UNIVERSITÁRIO':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(82,173,203,0.75)',
+            }
+                    break;
+                case 'VELAME':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,227,103,0.75)',
+            }
+                    break;
+                case 'VILA CABRAL':
+                    return {
+                pane: 'pane_BAIRROS_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.75)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(224,144,87,0.75)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_BAIRROS_0');
+        map.getPane('pane_BAIRROS_0').style.zIndex = 400;
+        map.getPane('pane_BAIRROS_0').style['mix-blend-mode'] = 'normal';
+        var layer_BAIRROS_0 = new L.geoJson(json_BAIRROS_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_BAIRROS_0',
+            onEachFeature: pop_BAIRROS_0,
+            style: style_BAIRROS_0_0,
+        });
+        bounds_group.addLayer(layer_BAIRROS_0);
+        map.addLayer(layer_BAIRROS_0);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'BAIRROS<br /><table><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_ACCIOFIGUEIREDO0.png" /></td><td>ACÁCIO FIGUEIREDO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_ALTOBRANCO1.png" /></td><td>ALTO BRANCO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_ARAX2.png" /></td><td>ARAXÁ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_BELAVISTA3.png" /></td><td>BELA VISTA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_BODOCONG4.png" /></td><td>BODOCONGÓ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CASTELOBRANCO5.png" /></td><td>CASTELO BRANCO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CATOL6.png" /></td><td>CATOLÉ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CENTENRIO7.png" /></td><td>CENTENÁRIO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CENTRO8.png" /></td><td>CENTRO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CIDADES9.png" /></td><td>CIDADES</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CONCEIO10.png" /></td><td>CONCEIÇÃO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CRUZEIRO11.png" /></td><td>CRUZEIRO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_CUITS12.png" /></td><td>CUITÉS</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_DINAMRICA13.png" /></td><td>DINAMÉRICA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_DISTRITOINDUSTRIAL14.png" /></td><td>DISTRITO INDUSTRIAL</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_ESTAOVELHA15.png" /></td><td>ESTAÇÃO VELHA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_ITARAR16.png" /></td><td>ITARARÉ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JARDIMCONTINENTAL17.png" /></td><td>JARDIM CONTINENTAL</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JARDIMPAULISTANO18.png" /></td><td>JARDIM PAULISTANO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JARDIMQUARENTA19.png" /></td><td>JARDIM QUARENTA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JARDIMTAVARES20.png" /></td><td>JARDIM TAVARES</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JEREMIAS21.png" /></td><td>JEREMIAS</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_JOSPINHEIRO22.png" /></td><td>JOSÉ PINHEIRO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_LAURITZEN23.png" /></td><td>LAURITZEN</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_LIBERDADE24.png" /></td><td>LIBERDADE</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_LOUZEIRO25.png" /></td><td>LOUZEIRO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_MALVINAS26.png" /></td><td>MALVINAS</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_MIRANTE27.png" /></td><td>MIRANTE</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_MONTECASTELO28.png" /></td><td>MONTE CASTELO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_MONTESANTO29.png" /></td><td>MONTE SANTO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_NAES30.png" /></td><td>NAÇÕES</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_NOVABRASLIA31.png" /></td><td>NOVA BRASÍLIA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_NOVOBODOCONG32.png" /></td><td>NOVO BODOCONGÓ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_PALMEIRA33.png" /></td><td>PALMEIRA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_PEDREGAL34.png" /></td><td>PEDREGAL</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_PRATA35.png" /></td><td>PRATA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_PRESIDENTEMDICE36.png" /></td><td>PRESIDENTE MÉDICE</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_QUARENTA37.png" /></td><td>QUARENTA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_RAMADINHA38.png" /></td><td>RAMADINHA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SANDRACAVALCANTE39.png" /></td><td>SANDRA CAVALCANTE</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SANTACRUZ40.png" /></td><td>SANTA CRUZ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SANTAROSA41.png" /></td><td>SANTA ROSA</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SANTOANTNIO42.png" /></td><td>SANTO ANTÔNIO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SOJOS43.png" /></td><td>SÃO JOSÉ</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_SERROTO44.png" /></td><td>SERROTÃO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_TAMBOR45.png" /></td><td>TAMBOR</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_TRSIRMS46.png" /></td><td>TRêS IRMÃS</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_UNIVERSITRIO47.png" /></td><td>UNIVERSITÁRIO</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_VELAME48.png" /></td><td>VELAME</td></tr><tr><td style="text-align: center;"><img src="legend/BAIRROS_0_VILACABRAL49.png" /></td><td>VILA CABRAL</td></tr></table>': layer_BAIRROS_0,}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_BAIRROS_0.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #1f78b4; font-size: 11pt; font-weight: bold; font-style: italic; font-family: \'Ubuntu\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BAIRROS_0'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_BAIRROS_0]);
+        map.on("zoomend", function(){
+            resetLabels([layer_BAIRROS_0]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_BAIRROS_0]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_BAIRROS_0]);
+        });
+        </script>
+    </body>
+</html>
